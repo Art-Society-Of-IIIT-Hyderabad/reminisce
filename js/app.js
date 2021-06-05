@@ -106,7 +106,8 @@ resources.load([
     'img/char_move_left.png',
     'img/hint.png',
     'img/gallerio.png',
-    'img/submission1.png'
+    'img/submission1.png',
+    'img/bakul.png',
 ]);
 resources.onReady(init);
 
@@ -125,7 +126,7 @@ var player = {
 
 var gallerio = {
     pos: [200,48],
-    sprite: new Sprite('img/gallerio.png', [0, 0], [100, 100], 0, [0])
+    sprite: new Sprite('img/bakul.png', [0, 0], [100, 100], 0, [0])
 }
 
 
