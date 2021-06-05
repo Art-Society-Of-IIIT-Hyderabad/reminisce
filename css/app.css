@@ -5,9 +5,6 @@ html, body {
     overflow: hidden;
 }
 #canvas-viewport{
-    width: 90em;
-    height: 40em ;
-    border: 1px solid rgb(223, 14, 14);
     display: block;
     margin: auto;
     overflow: hidden;
@@ -17,11 +14,32 @@ html, body {
     left: 0;
     right: 0;
 }
-canvas {
+canvas{
+    background-color: transparent;
+}
+#subm-1{
+
+    position: absolute;
+    top:230px; left:1400px;
+    width:600px;
+    height:400px;
+
+}
+#canvas1 {
     display: block;
     image-rendering: -moz-crisp-edges;
     image-rendering: -webkit-crisp-edges;
-    image-rendering: pixelated; 
+    image-rendering: pixelated;
+}
+
+#player-canvas{
+    position: relative;
+    top:-660px;
+    display: block;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -webkit-crisp-edges;
+    image-rendering: pixelated;
+    z-index: 1;
 }
 
 

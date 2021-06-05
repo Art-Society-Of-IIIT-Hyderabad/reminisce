@@ -11,8 +11,8 @@ var requestAnimFrame = (function(){
             window.setTimeout(callback, 1000 / 60);
         };
 })();
-nWidth = 1000
-nHeight = 500
+nWidth = 1200
+nHeight = 600
 const maxMultiplier = 100;
 const maxWidth = nWidth * maxMultiplier;
 const maxHeight = nHeight * maxMultiplier;
@@ -28,11 +28,17 @@ let cHeight = nHeight;
 let cWidth = nWidth;
 // Create the canvas
 var canvas = document.getElementById('canvas1');
+var playerCanvas = document.getElementById('player-canvas');
+var ctx2 = playerCanvas.getContext("2d");
+ctx2.fillStyle = 'red';
+ctx2.fillRect(50, 50, 100, 100);
 var viewport = document.getElementById('canvas-viewport')
 var camera_x = 0
 var ctx = canvas.getContext("2d");
 canvas.width = 600;
-canvas.height = 300;
+canvas.height = 150;
+playerCanvas.width = 600;
+playerCanvas.height = 150;
 console.log("hell")
 
 // The main game loop
@@ -49,47 +55,53 @@ function main() {
 };
 
 function resize() {
-  cWidth = window.innerWidth;
-  cHeight = window.innerHeight;
+//   cWidth = window.innerWidth;
+//   cHeight = window.innerHeight;
 
-  // ratio of the native game size width to height
-  const nativeRatio = nWidth / nHeight;
-  const browserWindowRatio = cWidth / cHeight;
+//   // ratio of the native game size width to height
+//   const nativeRatio = nWidth / nHeight;
+//   const browserWindowRatio = cWidth / cHeight;
 
-  // browser window is too wide
-  if (browserWindowRatio > nativeRatio) {
+//   // browser window is too wide
+//   if (browserWindowRatio > nativeRatio) {
 
-    cHeight = Math.floor(cHeight * windowPercentage); // optional
-    if (cHeight > maxWidth) cHeight = maxHeight; // optional
+//     cHeight = Math.floor(cHeight * windowPercentage); // optional
+//     if (cHeight > maxWidth) cHeight = maxHeight; // optional
 
-    cWidth = Math.floor(cHeight * nativeRatio);
-  } else {
-    // browser window is too high
+//     cWidth = Math.floor(cHeight * nativeRatio);
+//   } else {
+//     // browser window is too high
 
-    cWidth = Math.floor(cWidth * windowPercentage); // optional
-    if (cWidth > maxWidth) cWidth = maxWidth; // optional
+//     cWidth = Math.floor(cWidth * windowPercentage); // optional
+//     if (cWidth > maxWidth) cWidth = maxWidth; // optional
 
-    cHeight = Math.floor(cWidth / nativeRatio);
-  }
+//     cHeight = Math.floor(cWidth / nativeRatio);
+//   }
 
   // set the canvas style width and height to the new width and height
   viewport.style.width = `${cWidth}px`;
   viewport.style.height = `${cHeight}px`;
-  ctx.canvas.style.height = `${cHeight*2}px`;
-  viewport.scrollTop = viewport.scrollHeight;
+  ctx.canvas.style.height = `${cHeight*1.1}px`;
+  ctx2.canvas.style.height = `${cHeight*1.1}px`;
+  viewport.scrollTop = 73.45454406738281;
   
 }
 resize();
 
 function init() {
-    terrainPattern = ctx.createPattern(resources.get('img/terrain.png'), 'repeat');
+    terrainPattern = ctx.createPattern(resources.get('img/terrain.png'), 'no-repeat');
     lastTime = Date.now();
+    ctx.fillStyle = terrainPattern;
+    ctx2.clearRect(0,0,canvas.width,canvas.height);
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    renderEntity(gallerio)
     main();
 }
 
 resources.load([
     'img/idle.png',
     'img/terrain.png',
+    'img/transparent.png',
     'img/char_move.png',
     'img/char_move_left.png',
     'img/hint.png',
@@ -112,20 +124,20 @@ var player = {
 };
 
 var gallerio = {
-    pos: [200,200],
+    pos: [200,48],
     sprite: new Sprite('img/gallerio.png', [0, 0], [100, 100], 0, [0])
 }
 
 
 var submissions = [
 {
-    pos: [340,207],
+    pos: [340,55],
     sprite: new Sprite('img/submission1.png', [0, 0], [1280, 870], 0, [0],'horizontal',false,0.1)
 }
 ]
 
 var terrainPattern;
-
+var playerbg;
 // Speed in pixels per second
 var playerSpeed = 100;
 
@@ -229,10 +241,7 @@ function checkPlayerBounds() {
 
 // Draw everything
 function render() {
-    ctx.fillStyle = terrainPattern;
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-    renderEntity(gallerio)
-    renderEntity(submissions[0])
+    ctx2.clearRect(0,0,canvas.width,canvas.height);
     renderPlayer(player);
 
 };
@@ -265,12 +274,12 @@ function renderHint(entity) {
 }
 
 function renderPlayer(entity) {
-    ctx.save();
-    ctx.translate(entity.pos[0], entity.pos[1]);
-    if (entity.move===1) entity.sprite_move_right.render(ctx);
-    else if (entity.move===-1) entity.sprite_move_left.render(ctx)
-    else if (entity.move===0) entity.sprite_idle.render(ctx)
+    ctx2.save();
+    ctx2.translate(entity.pos[0], entity.pos[1]);
+    if (entity.move===1) entity.sprite_move_right.render(ctx2);
+    else if (entity.move===-1) entity.sprite_move_left.render(ctx2)
+    else if (entity.move===0) entity.sprite_idle.render(ctx2)
     //entity.sprite_idle.render(ctx)
     //console.log("move",entity.move)
-    ctx.restore();
+    ctx2.restore();
 }
