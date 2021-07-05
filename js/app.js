@@ -30,16 +30,19 @@ let cWidth = nWidth;
 var canvas = document.getElementById('canvas1');
 var playerCanvas = document.getElementById('player-canvas');
 var ctx2 = playerCanvas.getContext("2d");
-ctx2.fillStyle = 'red';
-ctx2.fillRect(50, 50, 100, 100);
 var viewport = document.getElementById('canvas-viewport')
 var camera_x = 0
 var ctx = canvas.getContext("2d");
-canvas.width = 600;
-canvas.height = 150;
-playerCanvas.width = 600;
-playerCanvas.height = 150;
-console.log("hell")
+var scroll_y_to =0;
+var stair = 0;
+var stair_in_x = 0;
+var stair_in_y = 0;
+var stair_out_x = 0;
+var stair_out_y = 0;
+canvas.width = 4000;
+canvas.height = 150*3;
+playerCanvas.width = 4000;
+playerCanvas.height = 150*3;
 
 // The main game loop
 var lastTime;
@@ -81,9 +84,9 @@ function resize() {
   // set the canvas style width and height to the new width and height
   viewport.style.width = `${cWidth}px`;
   viewport.style.height = `${cHeight}px`;
-  ctx.canvas.style.height = `${cHeight*1.1}px`;
-  ctx2.canvas.style.height = `${cHeight*1.1}px`;
-  viewport.scrollTop = 73.45454406738281;
+  ctx.canvas.style.height = `${cHeight*3}px`;
+  ctx2.canvas.style.height = `${cHeight*3}px`;
+  viewport.scrollTop = 1216;
   
 }
 resize();
@@ -94,7 +97,6 @@ function init() {
     ctx.fillStyle = terrainPattern;
     ctx2.clearRect(0,0,canvas.width,canvas.height);
     ctx.fillRect(0, 0, canvas.width, canvas.height);
-    renderEntity(gallerio)
     main();
 }
 
@@ -108,6 +110,9 @@ resources.load([
     'img/gallerio.png',
     'img/submission1.png',
     'img/bakul.png',
+    'img/stair-in-up.png',
+    'img/stair-in-down.png',
+    'img/catlick.png',
 ]);
 resources.onReady(init);
 
@@ -116,40 +121,35 @@ var hintEl = document.getElementById('message');
 // Game state
 
 var player = {
-    pos: [4, 235],
+    pos: [0, 390],
     sprite_idle: new Sprite('img/idle.png', [0, 0], [80, 80], 10, [0, 1,2,3,4,5,6,7,8,9]),
     sprite_move_right: new Sprite('img/char_move.png', [0, 0], [80, 80], 10, [1,2,3,4,5,6,7,8,9,10,11,12,13]),
     sprite_move_left: new Sprite('img/char_move_left.png', [0, 0], [80, 80], 10, [12,11,10,9,8,7,6,5,4,3,2,1,0]),
-    sprite_move_up: new Sprite('img/char_move_left.png', [0, 0], [80, 80], 10, [12,11,10,9,8,7,6,5,4,3,2,1,0]),
+    sprite_move_up: new Sprite('img/stair-in-up.png',[0,0],[32,40],4,[1,2,3,4]),
+    sprite_move_down: new Sprite('img/stair-in-down.png',[0,0],[32,40],4,[1,2,3,4]),
     move: 0
 };
+var cat1 = {
+    pos: [2171,412],
+    sprite: new Sprite('img/catlick.png', [0, 0], [32, 16],4,[0,1,2,3]),
+}
 
 var gallerio = {
     pos: [200,48],
     sprite: new Sprite('img/bakul.png', [0, 0], [100, 100], 0, [0])
 }
 
-
-var submissions = [
-{
-    pos: [340,55],
-    sprite: new Sprite('img/submission1.png', [0, 0], [1280, 870], 0, [0],'horizontal',false,0.1)
-}
-]
-
 var terrainPattern;
 var playerbg;
 // Speed in pixels per second
-var playerSpeed = 100;
-
+var playerSpeed = 150; //orginal
+//var playerSpeed =600
 
 // Update game objects
 function update(dt) {
 
     handleInput(dt);
     updateEntities(dt);
-
-
     checkCollisions();
     //console.log(hintEl)
 };
@@ -158,14 +158,8 @@ function handleInput(dt) {
     
     if(player.move<2) player.move=0
 
-    if(input.isDown('DOWN') || input.isDown('s')) {
-        player.pos[1] += Math.floor(playerSpeed * dt);
-        player.move=1
-    }
-
-    if(input.isDown('UP') || input.isDown('w')) {
-        player.pos[1] -= Math.floor(playerSpeed * dt);
-        player.move=1
+    if((input.isDown('UP') || input.isDown('w') || input.isDown('DOWN') || input.isDown('s')) && stair!=0) {
+        player.move=1+stair
     }
 
     if(input.isDown('LEFT') || input.isDown('a')) {
@@ -183,14 +177,6 @@ function handleInput(dt) {
     }
     if(input.isDown('e')) {
         console.log("player",player.pos)
-        console.log("scroll",viewport.scrollLeft)
-    }
-
-    if(input.isDown('SPACE')) {
-        if(computerTable.hint[0]) window.location.href = "https://github.com/95ych";
-        if(stairUp.hint){ 
-            player.move=2;
-        }
     }
 }
 
@@ -200,8 +186,86 @@ function updateEntities(dt) {
     // Update the player sprite animation
     if(player.move==1 ) player.sprite_move_right.update(dt);
     else if (player.move==-1) player.sprite_move_left.update(dt)
-    else if (player.move==2) stairUp.sprite_move.update(dt)
+    else if (player.move==2) player.sprite_move_up.update(dt)
+    else if (player.move==3) player.sprite_move_down.update(dt)
     else player.sprite_idle.update(dt)
+    if(player.pos[0]<3921 && player.pos[0]>3879 && player.pos[1]>300){
+        stair_in_x=3915
+        stair_in_y=409
+        stair_out_x=3940
+        stair_out_y=240
+        scroll_y_to=600
+        stair=1
+    }
+    
+    else if(player.pos[0]<926 && player.pos[0]>880 && player.pos[1]>300){
+        stair_in_x=914
+        stair_in_y=409
+        stair_out_x=920
+        stair_out_y=240
+        scroll_y_to=600
+        stair=1
+    }
+    
+    else if(player.pos[0]>3924 && player.pos[0]<3966 && player.pos[1]>200){
+        stair_in_x=3956
+        stair_in_y=259
+        stair_out_x=3900
+        stair_out_y=390
+        scroll_y_to =1206.22216796875
+        stair=2
+    }
+    else if(player.pos[0]<2030 && player.pos[0]>1986 && player.pos[1]>200){
+        stair_in_x=2023
+        stair_in_y=259
+        stair_out_x=1998
+        stair_out_y=90
+        stair=1
+        scroll_y_to=0
+    }
+    else if(player.pos[0]<2020 && player.pos[0]>1976 && player.pos[1]<200){
+        stair_in_x=2015
+        stair_in_y=109
+        stair_out_x=2012
+        stair_out_y=240
+        stair=2
+        scroll_y_to=600
+    }
+    else if(player.pos[0]<10  && player.pos[1]<200){
+        stair_in_x=7
+        stair_in_y=109
+        stair_out_x=10
+        stair_out_y=240
+        stair=2
+        scroll_y_to=600
+    }
+    else if(player.pos[0]>5 && player.pos[0]<40  && player.pos[1]>200){
+        stair_in_x=37
+        stair_in_y=259
+        stair_out_x=-5
+        stair_out_y=90
+        scroll_y_to =0
+        stair=1
+    }
+    else if(player.pos[0]>920 && player.pos[0]<970 && player.pos[1]>200){
+        stair_in_x=952
+        stair_in_y=259
+        stair_out_x=902
+        stair_out_y=390
+        scroll_y_to =1206.22216796875
+        stair=2
+    }
+
+    else stair=0
+    cat1.sprite.update(dt)
+    if(player.sprite_move_up._index>3 || player.sprite_move_down._index>3){ 
+        player.pos = [stair_out_x,stair_out_y];
+        player.move=0;
+        player.sprite_move_up._index=0
+        player.sprite_move_down._index=0 
+        viewport.scrollTop= scroll_y_to
+    }
+    
 }
 
 // Collisions
@@ -227,24 +291,30 @@ function checkPlayerBounds() {
     // Check bounds
     if(player.pos[0] < -10) {
         player.pos[0] = -10;
+     }
+     else if(player.pos[0] > canvas.width - player.sprite_idle.size[0]+40) {
+         player.pos[0] = canvas.width - player.sprite_idle.size[0]+40;
     }
-    else if(player.pos[0] > canvas.width - player.sprite_idle.size[0]+40) {
-        player.pos[0] = canvas.width - player.sprite_idle.size[0]+40;
+    if(player.pos[1]<300)
+    {
+        if(player.pos[0] > 956 && player.pos[0]<1960) player.pos[0] = 956
+        else if(player.pos[0] < 1980 && player.pos[0]>1000) player.pos[0] = 1980
     }
 
-    if(player.pos[1] < 0) {
-        player.pos[1] = 0;
-    }
-    else if(player.pos[1] > canvas.height - player.sprite_idle.size[1]+15) {
-        player.pos[1] = canvas.height - player.sprite_idle.size[1]+15;
-    }
+    // if(player.pos[1] < 0) {
+    //     player.pos[1] = 0;
+    // }
+    // else if(player.pos[1] > canvas.height - player.sprite_idle.size[1]+15) {
+    //     player.pos[1] = canvas.height - player.sprite_idle.size[1]+15;
+    // }
 }
 
 // Draw everything
 function render() {
     ctx2.clearRect(0,0,canvas.width,canvas.height);
+    
+    rendercat(cat1);
     renderPlayer(player);
-
 };
 
 function renderEntities(list) {
@@ -274,12 +344,22 @@ function renderHint(entity) {
     ctx.restore();
 }
 
-function renderPlayer(entity) {
+function rendercat(entity) {
     ctx2.save();
     ctx2.translate(entity.pos[0], entity.pos[1]);
+    entity.sprite.render(ctx2);
+    ctx2.restore();
+}
+
+function renderPlayer(entity) {
+    ctx2.save();
+    if (entity.move<2) ctx2.translate(entity.pos[0], entity.pos[1]);
+    else ctx2.translate(stair_in_x, stair_in_y);
     if (entity.move===1) entity.sprite_move_right.render(ctx2);
     else if (entity.move===-1) entity.sprite_move_left.render(ctx2)
     else if (entity.move===0) entity.sprite_idle.render(ctx2)
+    else if (entity.move===2) entity.sprite_move_up.render(ctx2)
+    else if (entity.move===3) entity.sprite_move_down.render(ctx2)
     //entity.sprite_idle.render(ctx)
     //console.log("move",entity.move)
     ctx2.restore();

@@ -20,7 +20,7 @@ canvas{
 #subm-1{
 
     position: absolute;
-    top:230px; left:1400px;
+    top:177px; right:0px;
     width:600px;
     height:400px;
 
@@ -34,7 +34,7 @@ canvas{
 
 #player-canvas{
     position: relative;
-    top:-660px;
+    top:-1820px;
     display: block;
     image-rendering: -moz-crisp-edges;
     image-rendering: -webkit-crisp-edges;
