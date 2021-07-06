@@ -313,7 +313,7 @@ function checkPlayerBounds() {
 function render() {
     ctx2.clearRect(0,0,canvas.width,canvas.height);
     
-    rendercat(cat1);
+    renderEntity(cat1);
     renderPlayer(player);
 };
 
@@ -324,10 +324,10 @@ function renderEntities(list) {
 }
 
 function renderEntity(entity) {
-    ctx.save();
-    ctx.translate(entity.pos[0], entity.pos[1]);
-    entity.sprite.render(ctx);
-    ctx.restore();
+    ctx2.save();
+    ctx2.translate(entity.pos[0], entity.pos[1]);
+    entity.sprite.render(ctx2);
+    ctx2.restore();
 }
 
 function renderRedirect(entity) {
@@ -344,12 +344,6 @@ function renderHint(entity) {
     ctx.restore();
 }
 
-function rendercat(entity) {
-    ctx2.save();
-    ctx2.translate(entity.pos[0], entity.pos[1]);
-    entity.sprite.render(ctx2);
-    ctx2.restore();
-}
 
 function renderPlayer(entity) {
     ctx2.save();
