@@ -17,7 +17,10 @@ html, body {
 canvas{
     background-color: transparent;
 }
-#subm-1{
+
+
+
+#pavani-p{
 
     position: absolute;
     top:177px; right:0px;
@@ -25,6 +28,120 @@ canvas{
     height:400px;
 
 }
+#ahana-p{
+    position: absolute;
+    top:177px; right:-1600px;
+    width:600px;
+    height:400px;
+}
+#ananya-p{
+    position: absolute;
+    top:675px; right:-2000px;
+    width:500px;
+    height:500px;
+}
+#anjali-p{
+    position: absolute;
+    top:775px; right:-800px;
+    width:600px;
+    height:400px;
+}
+#tanvi-p{
+    position: absolute;
+    top:177px; right:-800px;
+    width:600px;
+    height:400px;
+}
+
+#bakul1{
+    position: absolute;
+    top:1375px; right:-10500px;
+    width:600px;
+    height:400px;
+}
+#bakul3{
+    position: absolute;
+    top:1375px; right:-12000px;
+    width:600px;
+    height:400px;
+}
+
+#bakul4{
+    position: absolute;
+    top:1375px; right:-13500px;
+    width:600px;
+    height:400px;
+}
+#bakul6{
+    position: absolute;
+    top:672px; right:-13300px;
+    transform :rotate(-90deg);
+    height:600px;
+    width:400px;
+}
+
+#bakul7{
+    position: absolute;
+    top:775px; right:-11000px;
+    height:400px;
+    width:600px;
+}
+
+#bakul2{
+    position: absolute;
+    top:672px; right:-12100px;
+    transform :rotate(-90deg);
+    height:600px;
+    width:400px;
+}
+#palash{
+    position: absolute;
+    top:775px; right:-9500px;
+    height:400px;
+    width:600px;
+}
+
+#venkat{
+    position: absolute;
+    top:775px; right:-8000px;
+    height:400px;
+    width:600px;
+}
+
+#sagar{
+    position: absolute;
+    top:177px; right:-9000px;
+    height:400px;
+    width:600px;
+}
+#sanyam{
+    position: absolute;
+    top:177px; right:-10500px;
+    height:400px;
+    width:600px;
+}
+
+#nikhil{
+    position: absolute;
+    top:177px; right:-11800px;
+    height:400px;
+    width:600px;
+}
+
+#sid{
+    position: absolute;
+    top:177px; right:-13000px;
+    height:400px;
+    width:600px;
+}
+
+#sub{
+    position: absolute;
+    top:177px; right:-14300px;
+    height:400px;
+    width:600px;
+}
+
 #canvas1 {
     display: block;
     image-rendering: -moz-crisp-edges;

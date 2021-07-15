@@ -29,6 +29,7 @@ let cWidth = nWidth;
 // Create the canvas
 var canvas = document.getElementById('canvas1');
 var playerCanvas = document.getElementById('player-canvas');
+var welcome =document.getElementById('welcome');
 var ctx2 = playerCanvas.getContext("2d");
 var viewport = document.getElementById('canvas-viewport')
 var camera_x = 0
@@ -142,7 +143,7 @@ var gallerio = {
 var terrainPattern;
 var playerbg;
 // Speed in pixels per second
-var playerSpeed = 150; //orginal
+var playerSpeed = 600; //orginal
 //var playerSpeed =600
 
 // Update game objects
