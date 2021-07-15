@@ -117,8 +117,16 @@ resources.load([
 ]);
 resources.onReady(init);
 
-var hintEl = document.getElementById('message');
- 
+var participant = {
+    name: "",
+    room: "",
+    caption: "",
+}
+
+var partiName = document.getElementById('name');
+var roomno = document.getElementById('roomno');
+var caption = document.getElementById('caption');
+
 // Game state
 
 var player = {
@@ -153,6 +161,7 @@ function update(dt) {
     updateEntities(dt);
     checkCollisions();
     //console.log(hintEl)
+
 };
 
 function handleInput(dt) {
@@ -182,7 +191,9 @@ function handleInput(dt) {
 }
 
 function updateEntities(dt) {
-    hintEl.innerHTML = ""
+    partiName.innerHTML = participant.name;
+    roomno.innerHTML = participant.room;
+    caption.innerHTML = participant.caption;
     viewport.scrollLeft = (player.pos[0]/canvas.width)*viewport.scrollWidth
     // Update the player sprite animation
     if(player.move==1 ) player.sprite_move_right.update(dt);
@@ -256,8 +267,20 @@ function updateEntities(dt) {
         scroll_y_to =1206.22216796875
         stair=2
     }
+    else stair=0;
+    
+    if(player.pos[0]>645 && player.pos[0]<764 && player.pos[1]==240){
+        participant.name="Name: Joe Mama";
+        participant.room="Room: 666";
+        participant.caption="Just a feeling I've got\nLike something's about to happenBut I don't know whatIf that means what I think it meansWe're in trouble, big troubleAnd if he is as bananas as you sayI'm not taking any chancesYou are just what the doc ordered";
+    }
+    else{
+        participant.caption="";
+        participant.name="";
+        participant.room="";
+    } 
 
-    else stair=0
+    
     cat1.sprite.update(dt)
     if(player.sprite_move_up._index>3 || player.sprite_move_down._index>3){ 
         player.pos = [stair_out_x,stair_out_y];
@@ -284,7 +307,6 @@ function boxCollides(pos, size, pos2, size2) {
 }
 
 function checkCollisions() {
-    hintEl.innerHTML = ""
     checkPlayerBounds();
 }
 

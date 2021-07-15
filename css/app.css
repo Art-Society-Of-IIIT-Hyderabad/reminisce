@@ -18,6 +18,39 @@ canvas{
     background-color: transparent;
 }
 
+#name {
+    
+    font-size: large;
+    position: fixed;
+    left: 0;
+    top: 2%;
+    width: 100%;
+    height: 2.6em;
+    text-align: center;
+    color:white;
+}
+#roomno {
+    
+    font-size: medium;
+    position: fixed;
+    left: 0;
+    top: 5%;
+    width: 100%;
+    height: 2.6em;
+    text-align: center;
+    color:white;
+}
+#caption {
+    margin:auto;
+    font-size: medium;
+    position: fixed;
+    top: 90%;
+    width: 50%;
+    left:24%;
+    height: 2.6em;
+    text-align: center;
+    color:white;
+}
 
 
 #pavani-p{
@@ -159,18 +192,6 @@ canvas{
     z-index: 1;
 }
 
-
-#message {
-    font-family: 'Raleway', sans-serif;
-    font-size: medium;
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 2.6em;
-    text-align: center;
-    color:white;
-}
 
 .key {
     color: #aaffdd;

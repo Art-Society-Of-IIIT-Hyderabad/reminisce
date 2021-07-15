@@ -19,6 +19,26 @@ and arrange its position using css
 }
 ```
 
+#### Adding labels
+
+After adding a room,
+make sure to add the participant details,
+in function `updateEntities(dt)`
+possibly from line `272` theres a thread of if else statements
+add the participant details like as shown
+
+```js
+else if(player.pos[0]>645 && player.pos[0]<764 && player.pos[1]==240){
+        participant.name="Name: Joe Mama";
+        participant.room="Room: 666";
+        participant.caption="js go brr";
+    }
+```
+
+to make things easy , if you press `e` console will print the player location.
+go to the room edges and place your x coordinate range
+in the else if statement along with corresponding y coordinate.
+
 ## Adding sprites
 
 Add the spritesheet in /img directory.
