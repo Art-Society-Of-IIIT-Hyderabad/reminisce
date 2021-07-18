@@ -58,6 +58,57 @@ function main() {
     requestAnimFrame(main);
 };
 
+function mobileRight(){
+    document.dispatchEvent(new KeyboardEvent('keydown', {
+        key: "RIGHT",
+        keyCode: 39,
+        code: "RIGHT",
+    }));
+}
+function mobileLeft(){
+    document.dispatchEvent(new KeyboardEvent('keydown', {
+        key: "ArrowLeft",
+        keyCode: 37,
+        code: "ArrowLeft",
+    }));
+}
+function mobileUp(){
+    document.dispatchEvent(new KeyboardEvent('keydown', {
+        key: "ArrowUp",
+        keyCode: 38,
+        code: "ArrowUp",
+    }));
+}
+function mobileDown(){
+    document.dispatchEvent(new KeyboardEvent('keydown', {
+        key: "ArrowDown",
+        keyCode: 40,
+        code: "ArrowDown",
+    }));
+}
+function stopMobileMovement(){
+    document.dispatchEvent(new KeyboardEvent('keyup', {
+      key: "RIGHT",
+      keyCode: 39,
+      code: "RIGHT",
+    }));
+    document.dispatchEvent(new KeyboardEvent('keyup', {
+        key: "ArrowLeft",
+        keyCode: 37,
+        code: "ArrowLeft",
+    }));
+    document.dispatchEvent(new KeyboardEvent('keyup', {
+        key: "ArrowUp",
+        keyCode: 38,
+        code: "ArrowUp",
+    }));
+    document.dispatchEvent(new KeyboardEvent('keyup', {
+        key: "ArrowDown",
+        keyCode: 40,
+        code: "ArrowDown",
+    }));
+  }
+
 function resize() {
 //   cWidth = window.innerWidth;
 //   cHeight = window.innerHeight;
@@ -91,15 +142,23 @@ function resize() {
   
 }
 resize();
-
 function init() {
     terrainPattern = ctx.createPattern(resources.get('img/terrain.png'), 'no-repeat');
     lastTime = Date.now();
     ctx.fillStyle = terrainPattern;
     ctx2.clearRect(0,0,canvas.width,canvas.height);
     ctx.fillRect(0, 0, canvas.width, canvas.height);
+    document.getElementById("mobile-up").addEventListener("click", mobileUp);
+    document.getElementById("mobile-up").style.visibility = "visible";
+    document.getElementById("stopMobileMovement").style.visibility = "visible";
+    document.getElementById("mobile-down").addEventListener("click", mobileDown);
+    document.getElementById("stopMobileMovement").addEventListener("click", stopMobileMovement);
+    document.getElementById("mobile-right").addEventListener("click", mobileRight);
+    document.getElementById("mobile-left").addEventListener("click", mobileLeft);
     main();
 }
+
+
 
 resources.load([
     'img/idle.png',

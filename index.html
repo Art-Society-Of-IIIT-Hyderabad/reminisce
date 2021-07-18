@@ -6,11 +6,15 @@
 <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap" rel="stylesheet">
  <title></title>
     <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, height=device-height">
     <link rel="stylesheet" href="css/app.css">
   </head>
+  <script type="text/javascript" src="js/input.js"></script>
+
+  <script>
+  
+  </script>
   <body>
-    
     <div id="canvas-viewport">
       <canvas id="canvas1"></canvas>
       <canvas id="player-canvas" ></canvas>
@@ -38,8 +42,57 @@
       <div id="roomno"></div>
       <div id="caption"></div>
     </div>
-    <script type="text/javascript" src="js/resources.js"></script>
-    <script type="text/javascript" src="js/input.js"></script>
+    <div class="button-container">
+      <!-- Up arrow button -->
+      <button class="button" id="mobile-up">
+        <!-- Arrow -->
+        <div class="button__arrow button__arrow--up"></div>
+
+        <!-- Content -->
+        ...
+      </button>
+      <!-- Right arrow button -->
+      <button class="button" id="mobile-right">
+        <!-- Content -->
+        ...
+
+        <!-- Arrow -->
+        <div class="button__arrow button__arrow--right"></div>
+      </button>
+
+      <!-- Down arrow button -->
+      <button class="button" id="mobile-down">
+        <!-- Arrow -->
+        <div class="button__arrow button__arrow--down"></div>
+
+        <!-- Content -->
+        ...
+      </button>
+
+      <!-- Left arrow button -->
+      <button class="button" id="mobile-left">
+        <!-- Arrow -->
+        <div class="button__arrow button__arrow--left"></div>
+
+        <!-- Content -->
+        ...
+      </button>
+      <button id="stopMobileMovement" class="stop">Stop</button>
+      </div>
+
+<!-- Right arrow button -->
+
+  <script type="text/javascript" style="cursor: pointer;" src="js/resources.js"></script>
+  <script>
+    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) == false ){
+      document.getElementById("mobile-up").style.visibility = "hidden";
+      document.getElementById("mobile-down").style.visibility = "hidden";
+      document.getElementById("mobile-right").style.visibility = "hidden";
+      document.getElementById("mobile-left").style.visibility = "hidden";
+      document.getElementById("stopMobileMovement").style.visibility="hidden";
+      console.log("hehe");
+    }
+  </script>
     <script type="text/javascript" src="js/sprite.js"></script>
     <script type="text/javascript" src="js/app.js"></script>
   </body>
