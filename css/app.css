@@ -13,6 +13,8 @@ html, body {
     bottom: 0;
     left: 0;
     right: 0;
+    max-width: 80%;
+    max-height: 70%;
 }
 canvas{
     background-color: transparent;
@@ -176,11 +178,6 @@ canvas{
     height:400px;
 }
 
-#logo {
-    position:absolute;
-    bottom:30px;
-    right: 30px;
-}
 
 #bakul1{
     border: 30px solid transparent;
@@ -329,18 +326,29 @@ canvas{
 
 #roomno {
     position: absolute;
-    top: 20%;
+    top: 18%;
 }
 
 #name {
     position: absolute;
-    top: 20%; 
+    top: 21%; 
 }
 
 #reminisce-title {
     position: absolute;
-    top: 10%;
-    left: 27%;
+    top: 5%;
+    left: 30%;
+    max-width: 40%;
+    max-height: 12;
+}
+
+
+#logo {
+    position:absolute;
+    bottom:2%;
+    right: 2%;
+    max-width: 15%;
+    max-height: 10%;
 }
 
 .key {
