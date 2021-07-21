@@ -42,7 +42,7 @@
       <div id="roomno"></div>
       <div id="caption"></div>
     </div>
-    <div class="button-container">
+    <div class="button-container" id="mobile-container">
       <!-- Up arrow button -->
       <button class="button" id="mobile-up">
         <!-- Arrow -->
@@ -84,13 +84,11 @@
 
   <script type="text/javascript" style="cursor: pointer;" src="js/resources.js"></script>
   <script>
-    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) == false ){
-      document.getElementById("mobile-up").style.visibility = "hidden";
-      document.getElementById("mobile-down").style.visibility = "hidden";
-      document.getElementById("mobile-right").style.visibility = "hidden";
-      document.getElementById("mobile-left").style.visibility = "hidden";
-      document.getElementById("stopMobileMovement").style.visibility="hidden";
-      console.log("hehe");
+    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+    }
+    else{
+      document.getElementById("mobile-container").style.visibility = "hidden";
+
     }
   </script>
     <script type="text/javascript" src="js/sprite.js"></script>

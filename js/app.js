@@ -149,8 +149,6 @@ function init() {
     ctx2.clearRect(0,0,canvas.width,canvas.height);
     ctx.fillRect(0, 0, canvas.width, canvas.height);
     document.getElementById("mobile-up").addEventListener("click", mobileUp);
-    document.getElementById("mobile-up").style.visibility = "visible";
-    document.getElementById("stopMobileMovement").style.visibility = "visible";
     document.getElementById("mobile-down").addEventListener("click", mobileDown);
     document.getElementById("stopMobileMovement").addEventListener("click", stopMobileMovement);
     document.getElementById("mobile-right").addEventListener("click", mobileRight);
