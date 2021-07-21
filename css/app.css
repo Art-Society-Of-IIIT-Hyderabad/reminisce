@@ -176,6 +176,12 @@ canvas{
     height:400px;
 }
 
+#logo {
+    position:absolute;
+    bottom:30px;
+    right: 30px;
+}
+
 #bakul1{
     border: 30px solid transparent;
     border-style:inset;
@@ -321,6 +327,21 @@ canvas{
     z-index: 1;
 }
 
+#roomno {
+    position: absolute;
+    top: 20%;
+}
+
+#name {
+    position: absolute;
+    top: 20%; 
+}
+
+#reminisce-title {
+    position: absolute;
+    top: 10%;
+    left: 27%;
+}
 
 .key {
     color: #aaffdd;
@@ -382,5 +403,4 @@ canvas{
     border-left: 1px solid rgba(0, 0, 0, 0.3);
     transform: translateX(25%) rotate(45deg);
 }
-
 
