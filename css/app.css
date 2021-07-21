@@ -51,126 +51,255 @@ canvas{
     text-align: center;
     color:white;
 }
+    #bakul{
+    position: absolute;
+    top:1400px; right:-7500px;
+    height:200px;
+    width:200px;
+    }
+    #welcome{
+        position: absolute;
+        top:1400px; right:500px;
+        height:300px;
+        width:300px;
+        }
+   
+    #arrb1{
+        position: absolute;
+        top:1460px; right:-14600px;
+        height:150px;
+        width:150px;
 
+    }
+    #arrb2{
+        position: absolute;
+        top:860px; right:-14700px;
+        height:150px;
+        width:150px;
 
-#pavani-p{
+    }
+    #arrb3{
+        position: absolute;
+        top:860px; right:-7000px;
+        height:150px;
+        width:150px;
+
+    }
+    #arrb4{
+        position: absolute;
+        top:260px; right:-7000px;
+        height:150px;
+        width:150px;
+
+    }
+    #arrp1{
+        position: absolute;
+        top:1460px; right:-2584px;
+        height:150px;
+        width:150px;
+
+    }
+    #arrp2{
+        position: absolute;
+        top:860px; right:-2704px;
+        height:150px;
+        width:150px;
+
+    }
+    #arrp3{
+        position: absolute;
+        top:860px; right:950px;
+        height:150px;
+        width:150px;
+
+    }
+    #arrp4{
+        position: absolute;
+        top:260px; right:980px;
+        height:150px;
+        width:150px;
+
+    }
+
+#pfd{
 
     position: absolute;
-    top:177px; right:0px;
+    top:1550px; right:-1800px;
+    width:250px;
+    height:250px;
+}
+
+#pavani-p{
+    border: 30px solid transparent;
+    border-style:inset;
+    border-color: whitesmoke;
+    position: absolute;
+    top:117px; right:20px;
     width:600px;
     height:400px;
 
 }
 #ahana-p{
+    border: 30px solid transparent;
+    border-style:inset;
+    border-color: whitesmoke;
     position: absolute;
-    top:177px; right:-1600px;
+    top:117px; right:-1600px;
     width:600px;
     height:400px;
 }
 #ananya-p{
+    border: 30px solid transparent;
+    border-style:inset;
+    border-color: whitesmoke;
     position: absolute;
-    top:675px; right:-2000px;
+    top:615px; right:-2000px;
     width:500px;
     height:500px;
 }
 #anjali-p{
+    border: 30px solid transparent;
+    border-style:inset;
+    border-color: whitesmoke;
     position: absolute;
-    top:775px; right:-800px;
+    top:715px; right:-800px;
     width:600px;
     height:400px;
 }
 #tanvi-p{
+    border: 30px solid transparent;
+    border-style:inset;
+    border-color: whitesmoke;
     position: absolute;
-    top:177px; right:-800px;
+    top:117px; right:-800px;
     width:600px;
     height:400px;
 }
 
 #bakul1{
+    border: 30px solid transparent;
+    border-style:inset;
+    border-color: whitesmoke;
     position: absolute;
-    top:1375px; right:-10500px;
+    top:1315px; right:-10500px;
     width:600px;
     height:400px;
 }
 #bakul3{
+    border: 30px solid transparent;
+    border-style:inset;
+    border-color: whitesmoke;
     position: absolute;
-    top:1375px; right:-12000px;
+    top:1315px; right:-12000px;
     width:600px;
     height:400px;
 }
 
 #bakul4{
+    border: 30px solid transparent;
+    border-style:inset;
+    border-color:whitesmoke;
     position: absolute;
-    top:1375px; right:-13500px;
+    top:1315px; right:-13500px;
     width:600px;
     height:400px;
 }
 #bakul6{
+    border: 30px solid transparent;
+    border-style:inset;
+    border-color: whitesmoke;
     position: absolute;
-    top:672px; right:-13300px;
+    top:612px; right:-13300px;
     transform :rotate(-90deg);
     height:600px;
     width:400px;
 }
 
 #bakul7{
+    border: 30px solid transparent;
+    border-style:inset;
+    border-color: whitesmoke;
     position: absolute;
-    top:775px; right:-11000px;
+    top:715px; right:-11000px;
     height:400px;
     width:600px;
 }
 
 #bakul2{
+    border: 30px solid transparent;
+    border-style:inset;
+    border-color: whitesmoke;
     position: absolute;
-    top:672px; right:-12100px;
+    top:612px; right:-12100px;
     transform :rotate(-90deg);
     height:600px;
     width:400px;
 }
 #palash{
+    border: 30px solid transparent;
+    border-style:inset;
+    border-color: whitesmoke;
     position: absolute;
-    top:775px; right:-9500px;
+    top:715px; right:-9500px;
     height:400px;
     width:600px;
 }
 
 #venkat{
+    border: 30px solid transparent;
+    border-style:inset;
+    border-color: whitesmoke;
     position: absolute;
-    top:775px; right:-8000px;
+    top:715px; right:-8000px;
     height:400px;
     width:600px;
 }
 
 #sagar{
+    border: 30px solid transparent;
+    border-style:inset;
+    border-color: whitesmoke;
     position: absolute;
-    top:177px; right:-9000px;
+    top:117px; right:-9200px;
     height:400px;
     width:600px;
 }
 #sanyam{
+    border: 30px solid transparent;
+    border-style:inset;
+    border-color: whitesmoke;
     position: absolute;
-    top:177px; right:-10500px;
+    top:117px; right:-10500px;
     height:400px;
     width:600px;
 }
 
 #nikhil{
+    border: 30px solid transparent;
+    border-style:inset;
+    border-color: whitesmoke;
     position: absolute;
-    top:177px; right:-11800px;
+    top:117px; right:-11800px;
     height:400px;
     width:600px;
 }
 
 #sid{
+    border: 30px solid transparent;
+    border-style:inset;
+    border-color: whitesmoke;
     position: absolute;
-    top:177px; right:-13000px;
+    top:117px; right:-13000px;
     height:400px;
     width:600px;
 }
 
 #sub{
+    border: 30px solid transparent;
+    border-style:inset;
+    border-color: whitesmoke;
     position: absolute;
-    top:177px; right:-14300px;
+    top:117px; right:-14300px;
     height:400px;
     width:600px;
 }

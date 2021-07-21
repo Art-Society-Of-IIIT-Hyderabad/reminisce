@@ -327,16 +327,161 @@ function updateEntities(dt) {
     else stair=0;
     
     if(player.pos[0]>645 && player.pos[0]<764 && player.pos[1]==240){
-        participant.name="Name: Joe Mama";
-        participant.room="Room: 666";
+        participant.name="Name: Ananya Sane";
+        participant.room="Room: 101";
         participant.caption="Just a feeling I've got\nLike something's about to happenBut I don't know whatIf that means what I think it meansWe're in trouble, big troubleAnd if he is as bananas as you sayI'm not taking any chancesYou are just what the doc ordered";
     }
-    else{
+    else if (player.pos[0]>318 && player.pos[0]<460 && player.pos[1]==240){
+        participant.name="Name:  Anjali Singh";
+        participant.room="Room: 102";
+        participant.caption="What if you get a horrifying roommate who makes you feel your acads a bit less scary but eventually you find her fun (maybe this turns out a fantasy)";
+    } 
+    else if (player.pos[0]>111 && player.pos[0]<243 && player.pos[1]==90)
+    {
+        participant.name="Name: Pavani Chowdhary";
+        participant.room="Room: 305";
+        participant.caption="From me getting scared by my roommate's 4 ft tall teddy in the dark on my first day to having 5 people crammed into the room desperately trying to finish assignments, this room has witnessed a lot";
+    }
+    else if (player.pos[0]>333 && player.pos[0]<460 && player.pos[1]==90)
+    {
+        participant.name="Name: Tanvi Narsapur";
+        participant.room="Room: 314";
+        participant.caption="Group mei assignments karneka perfect adda ";
+    }
+    else if (player.pos[0]>529 && player.pos[0]<665 && player.pos[1]==90)
+    {
+        participant.name="Name: Ahana Datta";
+        participant.room="Room: 416";
+        participant.caption="😭";
+    }
+    else if (player.pos[0]>-10 && player.pos[0]<990 && player.pos[1]==390)
+    {
+        participant.name="PARIJAAT FLOOR 0";
+        participant.room="";
         participant.caption="";
+    }
+    else if (player.pos[0]>-10 && player.pos[0]<990 && player.pos[1]==240)
+    {
+        participant.name="PARIJAAT FLOOR 1";
+        participant.room="";
+        participant.caption="";
+    }
+    else if (player.pos[0]>-10 && player.pos[0]<990 && player.pos[1]==90)
+    {
+        participant.name="PARIJAAT FLOOR 2";
+        participant.room="";
+        participant.caption="";
+    }
+    else if (player.pos[0]>1635 && player.pos[0]<1836 && player.pos[1]==390)
+    {
+        participant.name="JC";
+        participant.room="";
+        participant.caption="";
+    }
+    else if (player.pos[0]>2741 && player.pos[0]<2886 && player.pos[1]==390)
+    {
+        participant.name="BAKUL FLOOR 0";
+        participant.room="";
+        participant.caption="";
+    }
+    else if (player.pos[0]>3111 && player.pos[0]<3255 && player.pos[1]==390)
+    {
+        participant.name="BAKUL FLOOR 0";
+        participant.room="";
+        participant.caption="";
+    }
+    else if (player.pos[0]>3495 && player.pos[0]<3640 && player.pos[1]==390)
+    {
+        participant.name="BAKUL FLOOR 0";
+        participant.room="";
+        participant.caption="";
+    }
+    else if (player.pos[0]>3446 && player.pos[0]<3598 && player.pos[1]==240)
+    {
+        participant.name="Name: Parth Maradia";
+        participant.room="Room: 201";
+        participant.caption="";
+        
+    }
+    else if (player.pos[0]>3160 && player.pos[0]<3286 && player.pos[1]==240)
+    {
+        participant.name="Name: Parth Maradia";
+        participant.room="Room: 202";
+        participant.caption="";
+    }
+    else if (player.pos[0]>2854 && player.pos[0]<3006 && player.pos[1]==240)
+    {
+        participant.name="BAKUL FLOOR 1";
+        participant.room="";
+        participant.caption="";
+    }
+    else if (player.pos[0]>2504 && player.pos[0]<2639 && player.pos[1]==240)
+    {
+        participant.name="Name: Palash Sharma";
+        participant.room="Room: 261";
+        participant.caption="One of my friends (Bhavya) would always sleep on my bed at random times in random poses and we would take funny pictures of his. There are sleeping pics of all friends in our group in wierdest of poses";
+    }
+    else if (player.pos[0]>2129 && player.pos[0]<2262 && player.pos[1]==240)
+    {
+        participant.name="Name: Pothula Venkat";
+        participant.room="Room: 105";
+        participant.caption="";
+    }
+    else if (player.pos[0]>2421 && player.pos[0]<2556 && player.pos[1]==90)
+    {
+        participant.name="Name: CYK sagar";
+        participant.room="Room: ";
+        participant.caption="";
+    }
+    else if (player.pos[0]>2737 && player.pos[0]<2871 && player.pos[1]==90)
+    {
+        participant.name="Name: Sanyam Shah";
+        participant.room="Room: 304";
+        participant.caption="Dorm room and lit fam ;)";
+    }
+    else if (player.pos[0]>3093 && player.pos[0]<3200 && player.pos[1]==90)
+    {
+        participant.name="Name: Nikhil Agarwal";
+        participant.room="Room: 303";
+        participant.caption="A cozy place which I'll call my home , where I am going to have a lot of fun and where tons of my memories are gonna live. --- my hostel room";
+    }
+    else if (player.pos[0]>3381 && player.pos[0]<3516 && player.pos[1]==90)
+    {
+        participant.name="Name: Siddarth Pavan";
+        participant.room="Room: 124";
+        participant.caption="Staying up late in the night with the bois and watching movies. Used to sweep and clean the room if no sweeper shows up by the end of the month. Has a bad habit of locking up the door always.";
+    }
+    else if (player.pos[0]>3688 && player.pos[0]<3803 && player.pos[1]==90)
+    {
+        participant.name="Name: CYK sagar";
+        participant.room="Room: 301";
+        participant.caption="";
+    }
+
+    else if (player.pos[0]>1979 && player.pos[0]<3995 && player.pos[1]==390)
+    {
+        participant.name="BAKUL FLOOR 0";
+        participant.room="";
+        participant.caption="";
+    }
+    else if (player.pos[0]>1979 && player.pos[0]<3995 && player.pos[1]==240)
+    {
+        participant.name="BAKUL FLOOR 1";
+        participant.room="";
+        participant.caption="";
+    }
+    else if (player.pos[0]>1979 && player.pos[0]<3995 && player.pos[1]==90)
+    {
+        participant.name="BAKUL FLOOR 2";
+        participant.room="";
+        participant.caption="";
+    }
+    else{
         participant.name="";
         participant.room="";
-    } 
+        participant.caption="";
 
+    }
     
     cat1.sprite.update(dt)
     if(player.sprite_move_up._index>3 || player.sprite_move_down._index>3){ 
