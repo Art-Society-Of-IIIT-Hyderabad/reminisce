@@ -327,9 +327,9 @@ function updateEntities(dt) {
     else stair=0;
     
     if(player.pos[0]>645 && player.pos[0]<764 && player.pos[1]==240){
-        participant.name="Name: Ananya Sane";
+        participant.name="Name: Harshita Gupta";
         participant.room="Room: 101";
-        participant.caption="Just a feeling I've got\nLike something's about to happenBut I don't know whatIf that means what I think it meansWe're in trouble, big troubleAnd if he is as bananas as you sayI'm not taking any chancesYou are just what the doc ordered";
+        participant.caption="And the empty rooms hold many memories ";
     }
     else if (player.pos[0]>318 && player.pos[0]<460 && player.pos[1]==240){
         participant.name="Name:  Anjali Singh";
@@ -380,20 +380,20 @@ function updateEntities(dt) {
     }
     else if (player.pos[0]>2741 && player.pos[0]<2886 && player.pos[1]==390)
     {
-        participant.name="BAKUL FLOOR 0";
-        participant.room="";
+        participant.name="Name: Rohan Lahane";
+        participant.room="Room: 343";
         participant.caption="";
     }
     else if (player.pos[0]>3111 && player.pos[0]<3255 && player.pos[1]==390)
     {
-        participant.name="BAKUL FLOOR 0";
-        participant.room="";
+        participant.name="Name: CYK Sagar";
+        participant.room="Room: 102";
         participant.caption="";
     }
     else if (player.pos[0]>3495 && player.pos[0]<3640 && player.pos[1]==390)
     {
-        participant.name="BAKUL FLOOR 0";
-        participant.room="";
+        participant.name="Name: Rohan Lahane";
+        participant.room="Room : 303";
         participant.caption="";
     }
     else if (player.pos[0]>3446 && player.pos[0]<3598 && player.pos[1]==240)
@@ -407,13 +407,13 @@ function updateEntities(dt) {
     {
         participant.name="Name: Parth Maradia";
         participant.room="Room: 202";
-        participant.caption="";
+        participant.caption="A room full of adventures";
     }
     else if (player.pos[0]>2854 && player.pos[0]<3006 && player.pos[1]==240)
     {
-        participant.name="BAKUL FLOOR 1";
-        participant.room="";
-        participant.caption="";
+        participant.name="Name: CYK Sagar";
+        participant.room="Room: 203";
+        participant.caption="Gaming Nights!!!";
     }
     else if (player.pos[0]>2504 && player.pos[0]<2639 && player.pos[1]==240)
     {
@@ -430,7 +430,7 @@ function updateEntities(dt) {
     else if (player.pos[0]>2421 && player.pos[0]<2556 && player.pos[1]==90)
     {
         participant.name="Name: CYK sagar";
-        participant.room="Room: ";
+        participant.room="Room: 106";
         participant.caption="";
     }
     else if (player.pos[0]>2737 && player.pos[0]<2871 && player.pos[1]==90)
