@@ -208,7 +208,7 @@ var gallerio = {
 var terrainPattern;
 var playerbg;
 // Speed in pixels per second
-var playerSpeed = 600; //orginal
+var playerSpeed = 400; //orginal
 //var playerSpeed =600
 
 // Update game objects
