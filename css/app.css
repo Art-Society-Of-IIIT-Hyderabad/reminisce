@@ -19,8 +19,8 @@ canvas{
 }
 
 #name {
-    
-    font-size: large;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: x-large;
     position: fixed;
     left: 0;
     top: 10%;
@@ -30,8 +30,8 @@ canvas{
     color:white;
 }
 #roomno {
-    
-    font-size: medium;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: x-large;
     position: fixed;
     left: 0;
     top: 15%;
@@ -42,9 +42,10 @@ canvas{
 }
 #caption {
     margin:auto;
-    font-size: medium;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: x-large;
     position: fixed;
-    top: 90%;
+    top: 85%;
     width: 50%;
     left:24%;
     height: 2.6em;
